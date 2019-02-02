@@ -14,5 +14,10 @@
     align-items: center;
 }
 
-h1 {font-size: 200px;}
+#front-title {
+    font-size: 200px;
+}
 
+#title {
+    font-size: 60px;
+}
