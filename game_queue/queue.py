@@ -1,7 +1,5 @@
 import random
 
-from game_queue.app import game
-
 
 class Game:
 
@@ -43,6 +41,8 @@ class Queue:
 
 
 def find_queue():
+    from game_queue.app import game
+
     ret_queue = None
     for queue in game.queues:
         if not queue.is_full():
