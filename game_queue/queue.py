@@ -1,8 +1,9 @@
 import random
 
+from game_queue.app import game
+
+
 class Game:
-
-
 
     def __init__(self):
         self.queues = []
@@ -18,8 +19,7 @@ class Queue:
         self.size = 10
 
     def add_player(self, player):
-
-        if self.players > self.size:
+        if len(self.players) > self.size:
             self.players.append(player)
             return True
 
@@ -40,3 +40,17 @@ class Queue:
             return True
 
         return False
+
+
+def find_queue():
+    ret_queue = None
+    for queue in game.queues:
+        if not queue.is_full():
+            ret_queue = queue
+            break
+
+    if ret_queue is None:
+        ret_queue = Queue()
+        game.add_queue(ret_queue)
+
+    return ret_queue
