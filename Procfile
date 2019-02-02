@@ -1,1 +1,1 @@
-web: gunicorn game_queuapp:app
+web: gunicorn game_queue.app:app
