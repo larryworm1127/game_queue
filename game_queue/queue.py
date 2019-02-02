@@ -1,4 +1,8 @@
+import random
+
 class Game:
+
+
 
     def __init__(self):
         self.queues = []
@@ -21,9 +25,13 @@ class Queue:
 
         return False
 
-    def get_players(self):
-        return self.players
-
     def remove_player(self, player):
         self.players.remove(player)
-        
+
+
+    def shuffle_players(self):
+        random.shuffle(self.players)
+        team1 = self.players[0:4]
+        team2 = self.players[5:9]
+
+        return team1, team2
