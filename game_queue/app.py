@@ -21,22 +21,16 @@ curr_queue = None
 def index():
     """The index page.
     """
-    from game_queue.forms import UsernameForm
-
-    form = UsernameForm()
-    if form.validate_on_submit():
-        curr_queue = find_queue()
-        return redirect(url_for('queue'))
-
-    return render_template('index.html', form=form)
+    return render_template('index.html')
 
 
 @app.route('/loading', methods=['POST', 'GET'])
 def loading():
     """The loading page while waiting for queues.
     """
-
-    return render_template('loading.html')
+    data = request.form['name']
+    curr_queue.add_player(data)
+    return redirect(url_for('queue'))
 
 
 @app.route('/queue', methods=['POST', 'GET'])

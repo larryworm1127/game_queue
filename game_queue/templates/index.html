@@ -4,40 +4,44 @@
 
 {% block body %}
 
-<div class="jumbotron vertical-center">
+  <div class="jumbotron vertical-center">
 
     <div class="container text-center">
       <h1>Q.U.E.U.E</h1>
     </div>
-</div>
+  </div>
 
-<div class="container text-center vertical-center">
+  <div class="container text-center vertical-center">
     <div class="card text-center" style="width:30%">
-        <img class="card-img-top text-center" src="{{ url_for('static', filename="Profile.jpg") }}">
-        <div class="card-body">
+      <img class="card-img-top text-center" alt="img"
+           src="{{ url_for('static', filename="Profile.jpg") }}">
+      <div class="card-body">
 
-            <div class="container">
-                <a href="#" style="color:Black" title="Instruction" data-toggle="popover" data-trigger="hover" data-content="You will join
-                a queue of 10 people and get randomly assigned to a team. Have fun!"><b>Enter your username:</b></a>
-            </div>
-
-            <form action="{{ url_for('queue') }}" method="post">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name" name="name">
-              </div>
-            </form>
-
+        <div class="container">
+          <a href="#" style="color:Black" title="Instruction"
+             data-toggle="popover" data-trigger="hover" data-content="You will join
+                a queue of 10 people and get randomly assigned to a team. Have fun!"><b>Enter
+            your username:</b></a>
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Join</button>
-        </div>
+
+        <form action="{{ url_for('queue') }}" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name"
+                   name="name">
+          </div>
+        </form>
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Join</button>
+      </div>
     </div>
   </div>
 
   <script>
-    $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
-    });
-    </script>
+      $(document).ready(function () {
+          $('[data-toggle="popover"]').popover();
+      });
+  </script>
 
 {% endblock %}
