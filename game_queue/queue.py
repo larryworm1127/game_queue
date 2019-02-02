@@ -28,10 +28,15 @@ class Queue:
     def remove_player(self, player):
         self.players.remove(player)
 
-
     def shuffle_players(self):
         random.shuffle(self.players)
-        team1 = self.players[0:4]
-        team2 = self.players[5:9]
+        team1 = self.players[:4]
+        team2 = self.players[5:]
 
         return team1, team2
+
+    def is_full(self):
+        if self.players == 10:
+            return True
+
+        return False

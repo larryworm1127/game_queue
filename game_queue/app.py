@@ -35,7 +35,7 @@ def loading():
 def queue():
     """The queue page showing all users in queue.
     """
-    return render_template('queue.html')
+    return render_template('queue.html', queue=1)
 
 
 if __name__ == '__main__':
