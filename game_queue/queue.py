@@ -12,10 +12,10 @@ class Game:
 class Queue:
     def __init__(self):
         self.players = []
-        self.size = 10
+        self.size = 4
 
     def add_player(self, player):
-        if len(self.players) > self.size:
+        if len(self.players) < self.size:
             self.players.append(player)
             return True
 
@@ -26,8 +26,8 @@ class Queue:
 
     def shuffle_players(self):
         random.shuffle(self.players)
-        team1 = self.players[:4]
-        team2 = self.players[5:]
+        team1 = self.players[:self.size // 2]
+        team2 = self.players[self.size // 2:]
 
         return team1, team2
 

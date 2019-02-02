@@ -3,41 +3,43 @@
 {% block title %}Queue{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Your Queue</h1>
+  <div class="container">
+    <h1 id="title" class="text-center">Your Queue</h1>
 
+    <hr>
     <div class="row">
-        <div class="col-lg-4">
-            <div class="list-group">
-                {% for player in queue.player %}
-                <a href="#" class="list-group-item list-group-item-action">{{ player }}</a>
-                {% endfor %}
-            </div>
+      <div class="col-lg-4">
+        <h2>Player List</h2>
+        <div class="list-group">
+          {% for player in queue.players %}
+            <a href="#"
+               class="list-group-item list-group-item-action">{{ player }}</a>
+          {% endfor %}
         </div>
+      </div>
 
-        <div class="col-lg-8">
-            <div class="card">
-                {{ set teams = queue.shuffle_players() }}
-                <div class="card-header">Team 1</div>
-                <div class="card-body">
-                    <div class="list-group">
-                        (% for player in teams[0] %}
-                        {{ player }}
-                        (% endfor %}
-                    </div>
-                </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header">Team 1</div>
+          <div class="card-body">
+            <div class="list-group">
+              {% for player in teams[0] %}
+                {{ player }}
+              {% endfor %}
             </div>
-            <div class="card">
-                <div class="card-header">Team 2</div>
-                <div class="card-body">
-                    <div class="list-group">
-                        (% for player in teams[1] %}
-                        {{ player }}
-                        (% endfor %}
-                    </div>
-                </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="card">
+          <div class="card-header">Team 2</div>
+          <div class="card-body">
+            <div class="list-group">
+              {% for player in teams[1] %}
+                {{ player }}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 {% endblock %}

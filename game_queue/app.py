@@ -26,18 +26,31 @@ def index():
 
 @app.route('/loading', methods=['POST', 'GET'])
 def loading():
-    """The loading page while waiting for queues.
+    """The loading page for processing queues.
     """
+    global curr_queue
     data = request.form['name']
-    curr_queue.add_player(data)
-    return redirect(url_for('queue'))
+    curr_queue = find_queue()
+    add = curr_queue.add_player(data)
+    if add:
+        return redirect(url_for('queue'))
+    else:
+        return redirect(url_for('processing'))
+
+
+@app.route('/processing')
+def processing():
+    """The processing page for loading pages.
+    """
+    pass
 
 
 @app.route('/queue', methods=['POST', 'GET'])
 def queue():
     """The queue page showing all users in queue.
     """
-    return render_template('queue.html', queue=curr_queue)
+    teams = []
+    return render_template('queue.html', queue=curr_queue, teams=teams)
 
 
 if __name__ == '__main__':
