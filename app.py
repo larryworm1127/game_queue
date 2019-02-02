@@ -1,10 +1,18 @@
-from flask import Flask, render_template, redirect, url_for
+import os
 
+from flask import Flask, render_template, redirect, url_for
 from .forms import UsernameForm
 
+# Create and configure the app
 app = Flask(__name__)
 
+# Update config for the app
+app.config.from_mapping(
+    SECRET_KEY=os.environ['SECRET_KEY'],
+)
 
+
+# Page routing
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """The index page.
