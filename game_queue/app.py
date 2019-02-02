@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template, redirect, url_for
-from .forms import UsernameForm
+from game_queue.forms import UsernameForm
 
 # Create and configure the app
 app = Flask(__name__)
