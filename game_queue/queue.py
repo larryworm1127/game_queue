@@ -32,7 +32,7 @@ class Queue:
         return team1, team2
 
     def is_full(self):
-        if self.players == 10:
+        if len(self.players) == self.size:
             return True
 
         return False
