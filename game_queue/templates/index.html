@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>GAME QUEUE</title>
-  </head>
-  <body>
+{% extends 'base.html' %}
 
+{% block title %}Game Queue{% endblock %}
+
+{% block body %}
     <img src="{{ url_for('static', filename="queue.jpg") }}" alt="QUEUE">
 
-
-  </body>
-</html>
+{% endblock %}
