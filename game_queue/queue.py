@@ -2,7 +2,6 @@ import random
 
 
 class Game:
-
     def __init__(self):
         self.queues = []
 
@@ -11,7 +10,6 @@ class Game:
 
 
 class Queue:
-
     def __init__(self):
         self.players = []
         self.size = 10

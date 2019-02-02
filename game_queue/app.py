@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 from game_queue.queue import Game, find_queue
 
 # Create and configure the app
@@ -31,7 +31,7 @@ def index():
     return render_template('index.html', form=form)
 
 
-@app.route('/loading',  methods=['POST', 'GET'])
+@app.route('/loading', methods=['POST', 'GET'])
 def loading():
     """The loading page while waiting for queues.
     """
