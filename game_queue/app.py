@@ -24,7 +24,7 @@ def index():
 
     form = UsernameForm()
     if form.validate_on_submit():
-        return redirect(url_for('queue'))
+        return redirect(url_for('loading'))
 
     return render_template('index.html', form=form)
 
@@ -33,6 +33,7 @@ def index():
 def loading():
     """The loading page while waiting for queues.
     """
+
     return render_template('loading.html')
 
 
