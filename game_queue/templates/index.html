@@ -3,6 +3,23 @@
 {% block title %}Game Queue{% endblock %}
 
 {% block body %}
-    <img src="{{ url_for('static', filename="queue.jpg") }}" alt="QUEUE">
+    <div class="container text-center">
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Q.U.E.U.E</h1>
+    </div>
+    <div class="card text-center" style="width:40%">
+        <img class="card-img-top text-center" style="width:200px; height:200px;" src="{{ url_for('static', filename="profile.svg") }}">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Enter your name:</label>
+                <input type="name" class="form-control" id="name" placeholder="Name" name="name">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+    </div>
 
 {% endblock %}
